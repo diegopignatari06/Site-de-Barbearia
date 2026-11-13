@@ -1,0 +1,70 @@
+:root {
+  --bordo: #5a1a2b;
+  --bordo-fundo: #4a1523;
+  --tinta: #26161b;
+  --porcelana: #faf7f6;
+  --linho: #f0e8e6;
+  --champanhe: #d9bda4;
+  --linha: rgba(90, 26, 43, 0.25);
+  --serif: "Bodoni Moda", "Didot", Georgia, serif;
+  --sans: "Jost", system-ui, sans-serif;
+  --margem: clamp(1.25rem, 6vw, 5rem);
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; color-scheme: light; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { font-family: var(--sans); background: var(--porcelana); color: var(--tinta); line-height: 1.7; font-size: 1.05rem; }
+h1, h2, .marca, figcaption { font-family: var(--serif); font-weight: 400; line-height: 1.12; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--champanhe); outline-offset: 3px; }
+
+.topo { position: absolute; top: 0; left: 0; right: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding: 1.5rem var(--margem); color: #fff; }
+.marca { font-size: 1.7rem; text-decoration: none; letter-spacing: 0.02em; }
+.topo nav { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+.topo nav a { text-decoration: none; font-weight: 500; font-size: 0.98rem; border-bottom: 1px solid transparent; }
+.topo nav a:hover { border-bottom-color: var(--champanhe); }
+
+.hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; background: var(--bordo-fundo); color: #fff; }
+.hero-texto { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 9rem var(--margem) 5rem; }
+.hero h1 { font-size: clamp(2.3rem, 4.6vw, 4rem); margin-bottom: 1.5rem; max-width: 14ch; }
+.hero p { max-width: 36ch; margin-bottom: 2.5rem; font-size: 1.15rem; color: #efe3df; }
+.hero-foto { background: var(--bordo); min-height: 60vh; overflow: hidden; }
+.hero-foto img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+
+.botao { display: inline-block; background: var(--champanhe); color: var(--bordo-fundo); padding: 1rem 2.2rem; text-decoration: none; font-weight: 500; letter-spacing: 0.03em; transition: background 0.2s; }
+.botao:hover { background: #e9d3c3; }
+
+.sobre, .servicos, .resultados { padding: 6rem var(--margem); }
+.sobre { max-width: 860px; margin: 0 auto; text-align: center; }
+.sobre h2, .servicos h2, .resultados h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); margin-bottom: 1.5rem; }
+.sobre p { font-size: 1.2rem; }
+
+.servicos { background: var(--linho); }
+.servicos > h2, .servicos ul { max-width: 900px; margin-left: auto; margin-right: auto; }
+.servicos ul { list-style: none; padding: 0; border-top: 1px solid var(--linha); }
+.servicos li { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem 2rem; flex-wrap: wrap; padding: 1.4rem 0; border-bottom: 1px solid var(--linha); }
+.servicos strong { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; }
+.servicos span { max-width: 36ch; text-align: right; }
+
+.resultados { max-width: 1000px; margin: 0 auto; }
+.resultados h2 { text-align: center; margin-bottom: 2.5rem; }
+.comparacao { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.75rem, 3vw, 2.5rem); }
+.comparacao figure { margin: 0; }
+.foto { aspect-ratio: 4 / 5; background: var(--linho); overflow: hidden; border: 1px solid var(--linha); padding: 0.5rem; }
+.foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.comparacao figcaption { font-size: 1.4rem; margin-top: 0.9rem; text-align: center; }
+
+.contato { background: var(--bordo-fundo); color: #fff; text-align: center; padding: 6rem var(--margem); }
+.contato h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); margin-bottom: 1rem; }
+.contato p { margin-bottom: 2rem; color: #efe3df; }
+.contato .numero { margin: 1.5rem 0 0; font-size: 1.1rem; color: #fff; }
+
+footer { background: var(--bordo-fundo); color: #cdb9b3; text-align: center; padding: 1.5rem; font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.15); }
+
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero-texto { padding: 9rem var(--margem) 3.5rem; }
+  .hero-foto { aspect-ratio: 4 / 5; min-height: 0; }
+  .topo nav { gap: 1rem; }
+  .servicos span { text-align: left; }
+}
